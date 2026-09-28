@@ -48,6 +48,10 @@ public class Event {
     @Column(nullable = false)
     private EventStatus status;
 
+    @ManyToOne
+    @JoinColumn(name = "organizer_id", nullable = false)
+    private User organizer;
+
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
