@@ -25,6 +25,11 @@ public class GlobalExceptionHandler {
         return resposta(HttpStatus.BAD_REQUEST, ex.getMessage());
     }
 
+    @ExceptionHandler(EmailAlreadyExistsException.class)
+    public ResponseEntity<ErrorResponseDTO> handleEmailAlreadyException(EmailAlreadyExistsException ex) {
+        return resposta(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponseDTO> handlerMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
         String mensagem = ex.getBindingResult().getFieldErrors().stream()
