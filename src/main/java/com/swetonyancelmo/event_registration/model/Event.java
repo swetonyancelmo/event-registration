@@ -28,7 +28,7 @@ public class Event {
     @Column(nullable = false)
     private String title;
 
-    @Column(length = 1000, nullable = false)
+    @Column(nullable = false)
     private String description;
 
     @Column(name = "startsat", nullable = false)
@@ -37,7 +37,7 @@ public class Event {
     @Column(name = "endsat", nullable = false)
     private LocalDateTime endsAt;
 
-    @Column(length = 1000, nullable = false)
+    @Column(nullable = false)
     private String location;
 
     @Column(nullable = false)
