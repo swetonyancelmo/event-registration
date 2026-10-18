@@ -1,0 +1,13 @@
+# Valores padrão apenas para desenvolvimento local (batem com o docker-compose.yml).
+# Em produção use o profile "prod" e defina as variáveis de ambiente.
+spring:
+  datasource:
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:dev-only-secret-change-me-0123456789abcdef}
+  admin:
+    email: ${ADMIN_EMAIL:admin@local.dev}
+    password: ${ADMIN_PASSWORD:admin12345}
